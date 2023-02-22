@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/DPonomarev23/frontend-project-44.git"
   },
+  "bin": {
+   "brain-games": "bin/brain-games.js"
+ },
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,3 +22,4 @@
   },
   "homepage": "https://github.com/DPonomarev23/frontend-project-44#readme"
 }
+
