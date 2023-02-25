@@ -1,7 +1,6 @@
-
 {
   "name": "@hexlet/code",
-  "type" : "module",
+  "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/DPonomarev23/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/DPonomarev23/frontend-project-44/actions)",
   "main": "index.js",
@@ -13,13 +12,15 @@
     "url": "git+https://github.com/DPonomarev23/frontend-project-44.git"
   },
   "bin": {
-   "brain-games": "bin/brain-games.js"
- },
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DPonomarev23/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/DPonomarev23/frontend-project-44#readme"
+  "homepage": "https://github.com/DPonomarev23/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
-
