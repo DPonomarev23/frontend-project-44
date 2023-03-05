@@ -2,7 +2,6 @@
 import getName from './cli.js';
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
 const name = getName();
 console.log('What is the result of the expression?');
 const printAnswer = () => {
@@ -16,31 +15,31 @@ const printAnswer = () => {
       console.log(`Question: ${getNumberOne}${randomSymbols}${getNumberTwo}`);
       const answer = readlineSync.question('Your answer: ');
       let answerNew = Number(answer);
-         let result;
-         switch (randomSymbols) {
-           case '+':
-             result = getNumberOne + getNumberTwo
-             break;
-           case '-':
+      let result;
+      switch (randomSymbols) {
+         case '+':
+            result = getNumberOne + getNumberTwo
+            break;
+         case '-':
             result = getNumberOne - getNumberTwo
-             break;
-             case '*':
-               result = getNumberOne * getNumberTwo;
-             break;
-           default:
+            break;
+         case '*':
+            result = getNumberOne * getNumberTwo;
+            break;
+         default:
             return;
-         };
-         if (result === answerNew) {
-            console.log("Correct!")
-            i = i + 1;
-         } else {
-            console.log(`${answer} is wrong answer ; (. Correct answer was ${result}.`)
-            console.log(`Let's try again, ${name}!`)
-            return
-         }
-      }
-      console.log(`Congratulations, ${name}!`)
+      };
+      if (result === answerNew) {
+         console.log("Correct!")
+         i = i + 1;
+      } else {
+         console.log(`${answer} is wrong answer ; (. Correct answer was ${result}.`)
+         console.log(`Let's try again, ${name}!`)
          return
       }
+   }
+   console.log(`Congratulations, ${name}!`)
+   return
+}
 // printAnswer();
 export default printAnswer;

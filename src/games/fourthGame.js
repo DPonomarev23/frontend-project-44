@@ -2,7 +2,6 @@
 import getName from './cli.js';
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
 const name = getName();
 console.log('What number is missing in the progression?');
 const printAnswer = () => {
