@@ -17,7 +17,7 @@ const printAnswer = () => {
     const index = Math.floor(Math.random() * arr.length);
     const result = arr[index];
     arr[index] = symbol;
-    const newArr = arr.join();
+    const newArr = arr.join(' ');
     console.log(`Question: ${newArr}`);
     const answer = readlineSync.question('Your answer: ');
     if (result.toString() === answer) {
