@@ -9,9 +9,10 @@ const printAnswer = () => {
   while (i <= 3) {
     const getNumberOne = Math.round(Math.random() * 10);
     const getNumberTwo = Math.ceil(Math.random() * 100);
+    const num = Math.round((getNumberTwo - getNumberOne) / 10);
     const arr = [];
-    for (let index = 0; index < getNumberTwo; index += getNumberOne) {
-      arr.push(getNumberOne + index);
+    for (let index = 0; index < 10; index += 1) {
+      arr.push(num * index);
     }
     const symbol = ['..'];
     const index = Math.floor(Math.random() * arr.length);
