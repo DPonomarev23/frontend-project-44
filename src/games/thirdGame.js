@@ -18,7 +18,7 @@ const printAnswer = () => {
         getNumberTwo -= getNumberOne;
       }
     }
-     const result = getNumberOne;
+    const result = getNumberOne;
     if (result === Number(answer)) {
       console.log('Correct!');
       i += 1;
