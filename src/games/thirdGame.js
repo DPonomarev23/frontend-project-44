@@ -11,7 +11,6 @@ const printAnswer = () => {
     let getNumberTwo = Math.ceil(Math.random() * 100);
     console.log(`Question: ${getNumberOne} ${getNumberTwo}`);
     const answer = readlineSync.question('Your answer: ');
-    let result;
     while (getNumberOne !== getNumberTwo) {
       if (getNumberOne > getNumberTwo) {
         getNumberOne -= getNumberTwo;
@@ -19,7 +18,7 @@ const printAnswer = () => {
         getNumberTwo -= getNumberOne;
       }
     }
-    result = getNumberOne;
+     const result = getNumberOne;
     if (result === Number(answer)) {
       console.log('Correct!');
       i += 1;
