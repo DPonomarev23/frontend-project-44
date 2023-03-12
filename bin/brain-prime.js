@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import printAnswer from '../src/games/fifthGame.js';
+import prime from '../src/games/prime.js';
 
-printAnswer();
+prime();

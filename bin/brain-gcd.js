@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import printAnswer from '../src/games/thirdGame.js';
+import gcd from '../src/games/gcd.js';
 
-printAnswer();
+gcd();

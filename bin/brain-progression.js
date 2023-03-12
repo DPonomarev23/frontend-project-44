@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import printAnswer from '../src/games/fourthGame.js';
+import progression from '../src/games/progression.js';
 
-printAnswer();
+progression();

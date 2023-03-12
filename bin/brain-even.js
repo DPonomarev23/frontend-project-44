@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import printAnswer from '../src/games/firstGame.js';
+import even from '../src/games/even.js';
 
-printAnswer();
+even();

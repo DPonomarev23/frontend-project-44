@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import printAnswer from '../src/games/secondGame.js';
+import calc from '../src/games/calc.js';
 
-printAnswer();
+calc();
