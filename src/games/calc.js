@@ -21,7 +21,7 @@ const calc = () => {
       correctAnswer = numberOne * numberTwo;
       break;
     default:
-      return;
+      break;
   }
   return [question, String(correctAnswer)];
 };
