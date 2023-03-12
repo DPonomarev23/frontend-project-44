@@ -1,12 +1,12 @@
-import getName from './games/cli.js';
 import readlineSync from 'readline-sync';
+import getName from './games/cli.js';
 
-const printAnswer = (game,rules) => {
-   const name = getName();
-   console.log(rules)
+const printAnswer = (game, rules) => {
+  const name = getName();
+  console.log(rules);
   let i = 1;
   while (i <= 3) {
-   const [question, correctAnswer] = game();
+    const [question, correctAnswer] = game();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Answer: ');
     if (correctAnswer === userAnswer) {
