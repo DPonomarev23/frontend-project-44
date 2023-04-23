@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import printAnswer from '../index.js';
+import run from '../index.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
-const gcd = () => {
+const description = 'Find the greatest common divisor of given numbers.';
+const getRound = () => {
   let numberOne = Math.ceil(Math.random() * 100);
   let numberTwo = Math.ceil(Math.random() * 100);
   const question = `${numberOne} ${numberTwo}`;
@@ -17,4 +17,4 @@ const gcd = () => {
   return [question, String(correctAnswer)];
 };
 
-export default () => printAnswer(gcd, rules);
+export default () => run(getRound, description);

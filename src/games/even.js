@@ -1,12 +1,7 @@
-#!/usr/bin/env node
-import getEven from './getEven.js';
-import printAnswer from '../index.js';
-
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-const even = () => {
-  const question = Math.ceil(Math.random() * 100);
-  const correctAnswer = getEven(question);
-  return [question, correctAnswer];
+const even = (number) => {
+  if (number % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
 };
-
-export default () => printAnswer(even, rules);
+export default even;

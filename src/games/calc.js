@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import printAnswer from '../index.js';
+import run from '../index.js';
 
-const rules = 'What is the result of the expression?';
-const calc = () => {
+const description = 'What is the result of the expression?';
+const runCalc = () => {
   const numberOne = Math.ceil(Math.random() * 100);
   const numberTwo = Math.ceil(Math.random() * 100);
   const symbols = ['+', '-', '*'];
@@ -26,4 +26,4 @@ const calc = () => {
   return [question, String(correctAnswer)];
 };
 
-export default () => printAnswer(calc, rules);
+export default () => run(runCalc, description);

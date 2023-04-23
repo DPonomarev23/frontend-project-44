@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import printAnswer from '../index.js';
+import run from '../index.js';
 
-const rules = 'What number is missing in the progression?';
-const progression = () => {
+const description = 'What number is missing in the progression?';
+const createProgression = () => {
   const numberOne = Math.round(Math.random() * 10);
   const numberTwo = Math.ceil(Math.random() * 100);
   const num = Math.round((numberTwo - numberOne) / 10);
@@ -19,4 +19,4 @@ const progression = () => {
   return [question, String(correctAnswer)];
 };
 
-export default () => printAnswer(progression, rules);
+export default () => run(createProgression, description);

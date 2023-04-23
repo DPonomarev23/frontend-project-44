@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gcd from '../src/games/gcd.js';
+import getRound from '../src/games/gcd.js';
 
-gcd();
+getRound();

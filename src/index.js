@@ -1,17 +1,20 @@
 import readlineSync from 'readline-sync';
-import getName from './games/cli.js';
 
-const printAnswer = (game, rules) => {
-  const name = getName();
-  console.log(rules);
-  let i = 1;
-  while (i <= 3) {
-    const [question, correctAnswer] = game();
+const run = (getTask, description) => {
+  const greeting = () => {
+    console.log('Welcome to the Brain Games!');
+    const userName = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${userName}!`);
+    return userName;
+  };
+  const name = greeting();
+  console.log(description);
+  for (let i = 1; i <= 3; i += 1) {
+    const [question, correctAnswer] = getTask();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Answer: ');
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
-      i += 1;
     } else {
       console.log(`${userAnswer} is wrong answer ; (. Correct answer was ${correctAnswer}.`);
       console.log(`Let's try again, ${name}!`);
@@ -21,4 +24,4 @@ const printAnswer = (game, rules) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default printAnswer;
+export default run;
