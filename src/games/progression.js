@@ -1,22 +1,33 @@
 #!/usr/bin/env node
 import run from '../index.js';
+import { getRandomIndex, getRandomNumber } from './utils.js';
 
 const description = 'What number is missing in the progression?';
-const createProgression = () => {
-  const numberOne = Math.round(Math.random() * 10);
-  const numberTwo = Math.ceil(Math.random() * 100);
-  const num = Math.round((numberTwo - numberOne) / 10);
-  const arr = [];
-  for (let index = 0; index < 10; index += 1) {
-    arr.push(num * index);
+
+const calculate = (firstNum,step,len) => {
+  const data = [];
+  for (let i = firstNum; i < len; i += step) {
+    data.push(i);
   }
+  return data;
+};
+
+const getTask = () => {
+  const firstNumber = Math.round(getRandomNumber() / 10);
+  const step = Math.round(getRandomNumber() / 10);
+  const length = step * 10;
   const symbol = ['..'];
-  const index = Math.floor(Math.random() * arr.length);
-  const correctAnswer = arr[index];
-  arr[index] = symbol;
-  const newArr = arr.join(' ');
-  const question = `${newArr}`;
+  const newArr = calculate(firstNumber,step,length);
+  const index = getRandomIndex(newArr);
+  const correctAnswer = newArr[index];
+  newArr[index] = symbol;
+  const newData = newArr.join(' ');
+  const question = `${newData}`;
   return [question, String(correctAnswer)];
 };
 
-export default () => run(createProgression, description);
+const runProgression = () => {
+  run(getTask, description);
+};
+
+export default runProgression;

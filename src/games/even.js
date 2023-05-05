@@ -1,7 +1,18 @@
-const even = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
+#!/usr/bin/env node
+import { isEven } from './utils.js';
+import run from '../index.js';
+import { getRandomNumber } from './utils.js';
+
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const getTask = () => {
+  const question = getRandomNumber();
+  const correctAnswer = isEven(question);
+  return [question, correctAnswer];
 };
-export default even;
+
+const runEven = () => {
+  run(getTask, description);
+};
+
+export default runEven;

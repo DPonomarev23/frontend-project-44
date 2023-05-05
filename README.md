@@ -9,7 +9,7 @@ Brain-games.
 This is a collection of five math games for brain pumping.
 More information in demonstration section.
 ## Requirements:
-Node 14.x version at least
+Node. js 13.2.0
 ## Install:
 ### clone repository on your computer
 ```
@@ -22,7 +22,9 @@ cd frontend-project-44
 ### install all necessary depencies
 ```
 npm ci 
+```
 or 
+```
 make install
 ```
 ### this command is responsible for linking commands from package.json to "./bin" directory
@@ -38,6 +40,6 @@ npm link
 #### brain-gcd
 [![asciicast](https://asciinema.org/a/9kFY2v7P2O9k45d4Zd1DGk01n.svg)](https://asciinema.org/a/9kFY2v7P2O9k45d4Zd1DGk01n)
 #### brain-progression
-[![asciicast](https://asciinema.org/a/d93JpB5LwUznoZpIJ9i0y9vX4.svg)](https://asciinema.org/a/d93JpB5LwUznoZpIJ9i0y9vX4)
+[![asciicast](https://asciinema.org/a/OhGPMQIr2Xft6OoTV75iHcyxv.svg)](https://asciinema.org/a/OhGPMQIr2Xft6OoTV75iHcyxv)
 #### brain-prime
 [![asciicast](https://asciinema.org/a/GGNQ53CBFeelGtQVO7vwIyOn4.svg)](https://asciinema.org/a/GGNQ53CBFeelGtQVO7vwIyOn4)

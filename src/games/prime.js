@@ -1,9 +1,18 @@
-const prime = (getNumberOne) => {
-  for (let i = 2, max = Math.sqrt(getNumberOne); i <= max; i += 1) {
-    if (getNumberOne % i === 0) {
-      return false;
-    }
-  }
-  return true;
+#!/usr/bin/env node
+import run from '../index.js';
+import { isPrime, getRandomNumber } from './utils.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+
+const getTask = () => {
+  const number1 = getRandomNumber();
+  const question = `${number1}`;
+  const correctAnswer = isPrime(number1) ? 'yes' : 'no';
+  return [question, String(correctAnswer)];
 };
-export default prime;
+
+const runPrime = () => {
+  run(getTask, description);
+};
+
+export default runPrime;

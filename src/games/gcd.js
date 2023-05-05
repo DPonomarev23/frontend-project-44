@@ -1,20 +1,30 @@
 #!/usr/bin/env node
 import run from '../index.js';
+import { getRandomNumber } from './utils.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const getRound = () => {
-  let numberOne = Math.ceil(Math.random() * 100);
-  let numberTwo = Math.ceil(Math.random() * 100);
-  const question = `${numberOne} ${numberTwo}`;
-  while (numberOne !== numberTwo) {
-    if (numberOne > numberTwo) {
-      numberOne -= numberTwo;
+
+const calculate = (x, y) => {
+  while (x !== y) {
+    if (x > y) {
+      x -= y;
     } else {
-      numberTwo -= numberOne;
+      y -= x;
     }
   }
-  const correctAnswer = numberOne;
+  return x;
+};
+
+const getTask = () => {
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
+  const question = `${number1} ${number2}`;
+  const correctAnswer = calculate(number1, number2);
   return [question, String(correctAnswer)];
 };
 
-export default () => run(getRound, description);
+const runGcd = () => {
+  run(getTask, description);
+};
+
+export default runGcd;

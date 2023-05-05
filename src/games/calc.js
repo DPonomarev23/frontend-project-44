@@ -1,29 +1,35 @@
 #!/usr/bin/env node
 import run from '../index.js';
+import { getRandomIndex, getRandomNumber } from './utils.js';
 
 const description = 'What is the result of the expression?';
-const runCalc = () => {
-  const numberOne = Math.ceil(Math.random() * 100);
-  const numberTwo = Math.ceil(Math.random() * 100);
-  const symbols = ['+', '-', '*'];
-  const index = Math.floor(Math.random() * symbols.length);
-  const randomSymbols = symbols[index];
-  const question = `${numberOne} ${randomSymbols} ${numberTwo}`;
-  let correctAnswer;
-  switch (randomSymbols) {
+const operators = ['+', '-', '*'];
+
+const calculate = (x, y, operator) => {
+  switch (operator) {
     case '+':
-      correctAnswer = numberOne + numberTwo;
-      break;
+      return x + y;
     case '-':
-      correctAnswer = numberOne - numberTwo;
-      break;
+      return x - y;
     case '*':
-      correctAnswer = numberOne * numberTwo;
-      break;
+      return x * y;
     default:
-      break;
+      throw new Error(`Unknown error: '${operator}'!`);
   }
+};
+
+const getTask = () => {
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
+  const index = getRandomIndex(operators);
+  const operator = operators[index];
+  const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = calculate(number1, number2, operator);
   return [question, String(correctAnswer)];
 };
 
-export default () => run(runCalc, description);
+const runCalc = () => {
+  run(getTask, description);
+};
+
+export default runCalc;
