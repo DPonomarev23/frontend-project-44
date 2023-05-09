@@ -4,20 +4,20 @@ import { getRandomIndex, getRandomNumber } from './utils.js';
 
 const description = 'What number is missing in the progression?';
 
-const calculate = (firstNum,step,len) => {
+const createProgression = (firstNumber, step, len) => {
   const data = [];
-  for (let i = firstNum; i < len; i += step) {
-    data.push(i);
+  for (let i = 0; i < len; i += step) {
+    data.push(firstNumber + i);
   }
   return data;
 };
 
 const getTask = () => {
-  const firstNumber = Math.round(getRandomNumber() / 10);
-  const step = Math.round(getRandomNumber() / 10);
+  const start = getRandomNumber(1, 100);
+  const step = getRandomNumber(1, 5);
   const length = step * 10;
   const symbol = ['..'];
-  const newArr = calculate(firstNumber,step,length);
+  const newArr = createProgression(start, step, length);
   const index = getRandomIndex(newArr);
   const correctAnswer = newArr[index];
   newArr[index] = symbol;

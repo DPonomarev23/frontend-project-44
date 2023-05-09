@@ -19,8 +19,8 @@ const calculate = (x, y, operator) => {
 };
 
 const getTask = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
   const index = getRandomIndex(operators);
   const operator = operators[index];
   const question = `${number1} ${operator} ${number2}`;

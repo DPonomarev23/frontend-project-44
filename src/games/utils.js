@@ -4,13 +4,11 @@ const isEven = (number) => {
   }
   return 'no';
 };
-export { isEven };
 
 const getRandomIndex = (data) => {
   const i = Math.floor(Math.random() * data.length);
   return i;
 };
-export { getRandomIndex };
 
 const isPrime = (number) => {
   for (let i = 2, max = Math.sqrt(number); i <= max; i += 1) {
@@ -20,12 +18,11 @@ const isPrime = (number) => {
   }
   return true;
 };
-export { isPrime };
 
-const getRandomNumber = () => {
-  const min = Math.round(Math.random() * 10);
-  const max = Math.ceil(Math.random() * 100);
+const getRandomNumber = (min, max) => {
   const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
   return randomNum;
 };
-export { getRandomNumber };
+export {
+  getRandomNumber, isPrime, getRandomIndex, isEven,
+};
