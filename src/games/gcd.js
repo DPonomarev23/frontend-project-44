@@ -4,22 +4,22 @@ import { getRandomNumber } from './utils.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getNod = (x, y) => {
+const getGcd = (x, y) => {
   if (y > x) {
-    return getNod(y, x);
+    return getGcd(y, x);
   }
-  if (!y) {
+  if (y === 0) {
     return x;
   }
-  return getNod(y, x % y);
+  return getGcd(y, x % y);
 };
 
 const getTask = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
   const question = `${number1} ${number2}`;
-  const correctAnswer = getNod(number1, number2);
-  return [question, String(correctAnswer)];
+  const correctAnswer = getGcd(number1, number2);
+  return [String(question), String(correctAnswer)];
 };
 
 const runGcd = () => {

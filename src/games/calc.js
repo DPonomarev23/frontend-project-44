@@ -25,7 +25,7 @@ const getTask = () => {
   const operator = operators[index];
   const question = `${number1} ${operator} ${number2}`;
   const correctAnswer = calculate(number1, number2, operator);
-  return [question, String(correctAnswer)];
+  return [String(question), String(correctAnswer)];
 };
 
 const runCalc = () => {

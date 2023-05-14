@@ -8,7 +8,7 @@ const getTask = () => {
   const number1 = getRandomNumber(1, 100);
   const question = `${number1}`;
   const correctAnswer = isPrime(number1) ? 'yes' : 'no';
-  return [question, String(correctAnswer)];
+  return [String(question), String(correctAnswer)];
 };
 
 const runPrime = () => {

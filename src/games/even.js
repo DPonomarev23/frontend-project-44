@@ -6,8 +6,8 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const getTask = () => {
   const question = getRandomNumber(1, 100);
-  const correctAnswer = isEven(question);
-  return [question, correctAnswer];
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return [String(question), String(correctAnswer)];
 };
 
 const runEven = () => {
