@@ -8,8 +8,11 @@ const isEven = (number) => {
 const getRandomIndex = (data) => Math.floor(Math.random() * data.length);
 
 const isPrime = (number) => {
+  if (number <= 1) {
+    return false;
+  }
   for (let i = 2, max = Math.sqrt(number); i <= max; i += 1) {
-    if (number % i < 1) {
+    if (number % i < 0) {
       return false;
     }
   }

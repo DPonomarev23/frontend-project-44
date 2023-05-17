@@ -22,7 +22,7 @@ const getTask = () => {
   const correctAnswer = progression[index];
   progression[index] = symbol;
   const question = `${progression.join(' ')}`;
-  return [String(question), String(correctAnswer)];
+  return [question, String(correctAnswer)];
 };
 
 const runProgression = () => {
